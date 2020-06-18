@@ -1,0 +1,63 @@
+<Label>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "pic.jpg"
+    font_name: 'Roboto'
+    font_size: 60
+    markup: True
+    source: "pic.jpg"
+
+<Mybuttons@Button>:
+
+    font_size: 25
+    bold: True
+    background_normal: 'green.png'
+    background_down: 'green.png'
+
+BoxLayout:
+    orientation: 'vertical'
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "pic.jpg"
+
+
+    Label:
+        id: time
+        text: '[b]00[/b]:00:00'
+
+    BoxLayout:
+        height: 90
+        orientation: 'horizontal'
+        padding: 20
+        spacing: 20
+        size_hint: (1, None)
+
+        Mybuttons:
+            id: start_stop
+            text: 'Start'
+            on_press: app.start_stop()
+
+        Mybuttons:
+            id: reset_button
+            text: 'Reset'
+            on_press: app.reset_button()
+            background_normal: 'pink.png'
+            background_down: 'pink.png'
+
+
+    Label:
+        id: stopwatch
+        text: '00:00.[size=40]00[/size]'
+
+    BoxLayout:
+        id: title
+        size_hint_y: .3
+        Label:
+            text: "Musa's StopWatch"
+            font_size: 30
+            bold : True
+
